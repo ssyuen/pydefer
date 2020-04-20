@@ -1,7 +1,7 @@
 from contextlib import ExitStack
 from functools import wraps, partial
 
-def defer(func,*func_args,**kwargs):
+def defer(func,*func_args,DEBUG=False,file=False):
     '''
     `func` - takes in a function's name (their `__name__`)
 
@@ -10,7 +10,7 @@ def defer(func,*func_args,**kwargs):
     def dec(f):
         @wraps(f)
         def wrapped_func(*args, **kws):
-            if 'DEBUG' in kwargs:
+            if DEBUG:
                 print('__________ENTERING EXIT CALLBACK STACK__________\n')
                 with ExitStack() as stack:
                     stack.callback(partial(func,*func_args))
@@ -27,8 +27,10 @@ def defer(func,*func_args,**kwargs):
         return wrapped_func
     return dec
     
-def print_mult(string: str, amt: int):
-    print(string * amt)
+@defer(open('test3.txt','a').close)
+def test3():
+    f = open('test3.txt','w')
+    f.write('test3')
 
 @defer(print,'butt',DEBUG='DEBUG')
 def test2():
@@ -44,5 +46,6 @@ def test():
 
 if __name__ == '__main__':
     # test()
-    test2()
+    # test2()
+    test3()
     # print('end test')
