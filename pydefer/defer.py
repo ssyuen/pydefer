@@ -3,6 +3,8 @@ from functools import wraps, partial
 
 def defer(func,*func_args,DEBUG=False,file=False):
     '''
+    Defers a function until after the wrapped function has been executed.
+
     `func` - takes in a function's name (their `__name__`)
 
     `*args` - the arguments that would be passed into the func

@@ -9,6 +9,8 @@ verify_ssl = true
 setuptools = "*"
 wheel = "*"
 pytest = "*"
+pydefer = {version = "*",editable = true}
+twine = "*"
 
 [requires]
 python_version = "3.7"
