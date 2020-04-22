@@ -1,0 +1,8 @@
+README.md
+setup.py
+pydefer/__init__.py
+pydefer/defer.py
+pydefer.egg-info/PKG-INFO
+pydefer.egg-info/SOURCES.txt
+pydefer.egg-info/dependency_links.txt
+pydefer.egg-info/top_level.txt
