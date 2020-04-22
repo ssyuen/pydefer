@@ -1,11 +1,8 @@
 .vscode/
 
-.pydefer_ssyuen.egg-info/
-
-.pydefer.egg-info/
-
-.build/
-
-.dist/
+build/
+dist/
+pydefer_ssyuen.egg-info/
+pydefer.egg-info/
 
 setup.py
